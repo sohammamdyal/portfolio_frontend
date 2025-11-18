@@ -20,7 +20,7 @@ const Dashboard = () => {
 
     useEffect(() => {
       const token = localStorage.getItem("token");
-      axios.get("http://localhost:5000/dashboard", {
+      axios.get("https://portfolio-backend-ijsg.onrender.com/dashboard", {
         headers: {
           Authorization: `Bearer ${token}`
         }

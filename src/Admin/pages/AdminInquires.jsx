@@ -6,7 +6,7 @@ const AdminInquiries = () => {
 
   const fetchInquiries = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/inquiries");
+      const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/inquiries");
       setInquiries(res.data);
     } catch (err) {
       console.error("Error fetching inquiries:", err);

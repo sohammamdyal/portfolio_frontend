@@ -15,7 +15,7 @@ export default function AddEducation() {
 
 
   const fetchEducation = async () => {
-    const res = await axios.get("http://localhost:5000/education");
+    const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/education");
     setEducation(res.data);
   };
 
@@ -34,10 +34,10 @@ export default function AddEducation() {
 
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/education/${editId}`, form);
+        await axios.put(`https://portfolio-backend-ijsg.onrender.com/education/${editId}`, form);
         alert("Education Updated!");
       } else {
-        await axios.post("http://localhost:5000/education", form);
+        await axios.post("https://portfolio-backend-ijsg.onrender.com/education", form);
         alert("Education Added!");
       }
 
@@ -61,7 +61,7 @@ export default function AddEducation() {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this record?")) return;
 
-    await axios.delete(`http://localhost:5000/education/${id}`);
+    await axios.delete(`https://portfolio-backend-ijsg.onrender.com/education/${id}`);
     fetchEducation();
   };
 

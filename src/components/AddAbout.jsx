@@ -48,11 +48,11 @@ const AdminAddAbout = () => {
     try {
       if (aboutId) {
     
-        await axios.put(`http://localhost:5000/about/${aboutId}`, fd);
+        await axios.put(`https://portfolio-backend-ijsg.onrender.com/about/${aboutId}`, fd);
         alert("About updated successfully!");
       } else {
      
-        await axios.post("http://localhost:5000/about", fd);
+        await axios.post("https://portfolio-backend-ijsg.onrender.com/about", fd);
         alert("About added successfully!");
       }
 

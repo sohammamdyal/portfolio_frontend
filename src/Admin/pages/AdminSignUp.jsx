@@ -39,7 +39,7 @@ function AdminSignUp({ setLoggedInUser }) {
     if (formData.image) fd.append('image', formData.image);
     
     
-    await axios.post('http://localhost:5000/adminregister', fd, { withCredentials: true });
+    await axios.post('https://portfolio-backend-ijsg.onrender.com/adminregister', fd, { withCredentials: true });
     alert('Admin Registered Successfully!');
     navigate('/adminlogin');
     } catch (err) {

@@ -3,13 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 const Home = lazy(() => import('./pages/Home'));
 const AdminLogin = lazy(() => import('./Admin/pages/AdminLogin'));
-const AdminSignup = lazy(() => import('./Admin/pages/AdminSignup'));
-// const AdminLayout = lazy(() => import('./Admin/layouts/DashboardLayout'));
-// const AdminMessages = lazy(() => import('./components/AdminMessages'));
-// const AdminProjects = lazy(() => import('./components/AdminProjects'));
-// const AddProject = lazy(() => import('./components/AddProject'));
-// const EditProject = lazy(() => import('./components/EditProject'));
-import ProtectedRoute from "./components/ProtectedRoute"
+const AdminSignup = lazy(() => import('./Admin/pages/AdminSignUp'));
 import './App.css';
 import Hero from "./components/Hero";
 import Loading from "./components/Loading";

@@ -17,7 +17,7 @@ const AdminAddProject = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/projects");
+      const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/projects");
       setProjects(res.data);
     } catch (error) {
       console.error("Error fetching projects:", error);
@@ -52,10 +52,10 @@ const AdminAddProject = () => {
 
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/projects/${editId}`, fd);
+        await axios.put(`https://portfolio-backend-ijsg.onrender.com/projects/${editId}`, fd);
         alert("Project updated successfully!");
       } else {
-        await axios.post("http://localhost:5000/projects", fd);
+        await axios.post("https://portfolio-backend-ijsg.onrender.com/projects", fd);
         alert("Project added successfully!");
       }
 
@@ -97,7 +97,7 @@ const AdminAddProject = () => {
     if (!window.confirm("Delete this project?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/projects/${id}`);
+      await axios.delete(`https://portfolio-backend-ijsg.onrender.com/projects/${id}`);
       fetchProjects();
       alert("Project deleted!");
     } catch (err) {

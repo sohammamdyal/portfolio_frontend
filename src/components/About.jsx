@@ -7,7 +7,7 @@ const About = () => {
   useEffect(() => {
     const loadAbout = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/about");
+        const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/about");
         setAbout(res.data);
       } catch (err) {
         console.log(err);

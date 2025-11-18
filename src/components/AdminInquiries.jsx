@@ -6,7 +6,7 @@ const AdminInquiries = () => {
 
   useEffect(() => {
     const fetchInquiries = async () => {
-      const res = await axios.get("http://localhost:5000/contact");
+      const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/contact");
       setInquiries(res.data);
     };
 

@@ -24,8 +24,7 @@ const Contact = () => {
     setStatus("");
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/contact",
+      const response = await axios.post("https://portfolio-backend-ijsg.onrender.com/contact",
         formData
       );
 
@@ -41,7 +40,7 @@ const Contact = () => {
     } finally {
       setLoading(false);
 
-      setTimeout(() => setStatus(""), 3000); // Clear status after 3 sec
+      setTimeout(() => setStatus(""), 3000); 
     }
   };
 

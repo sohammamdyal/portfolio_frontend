@@ -21,7 +21,7 @@ function AdminLogin({ setLoggedInUser }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/adminlogin", form, {
+      const res = await axios.post("https://portfolio-backend-ijsg.onrender.com/adminlogin", form, {
         withCredentials: true,
       });
       alert("Login Successful");

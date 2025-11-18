@@ -9,7 +9,7 @@ const AddSkills = () => {
 
 
   const fetchSkills = async () => {
-    const res = await axios.get("http://localhost:5000/skills");
+    const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/skills");
     setSkills(res.data);
   };
 
@@ -27,10 +27,10 @@ const AddSkills = () => {
 
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/skills/${editId}`, data);
+        await axios.put(`https://portfolio-backend-ijsg.onrender.com/skills/${editId}`, data);
         alert("Skill updated!");
       } else {
-        await axios.post("http://localhost:5000/skills", data);
+        await axios.post("https://portfolio-backend-ijsg.onrender.com/skills", data);
         alert("Skill added!");
       }
 
@@ -47,7 +47,7 @@ const AddSkills = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure?")) return;
 
-    await axios.delete(`http://localhost:5000/skills/${id}`);
+    await axios.delete(`https://portfolio-backend-ijsg.onrender.com/skills/${id}`);
     fetchSkills();
   };
 
@@ -111,7 +111,7 @@ const AddSkills = () => {
                 <td>
                   {item.icon ? (
                     <img
-                      src={`http://localhost:5000/uploads/${item.icon}`}
+                      src={`https://portfolio-backend-ijsg.onrender.com/uploads/${item.icon}`}
                       alt=""
                       width="50"
                       height="50"

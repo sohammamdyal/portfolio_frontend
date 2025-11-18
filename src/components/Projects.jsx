@@ -9,7 +9,7 @@ const Projects = () => {
 
     const fetchProjects = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/projects");
+        const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/projects");
         setProjects(res.data);
       } catch (error) {
         console.error("Error fetching projects:", error);

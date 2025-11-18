@@ -25,7 +25,7 @@ const AdminServices = () => {
   })
   const fetchServices = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/getservices");
+      const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/getservices");
       setServices(res.data);
     } catch (err) {
       console.error("Error fetching services:", err);
@@ -94,13 +94,13 @@ const AdminServices = () => {
 
   try {
     if (editId) {
-           await axios.put(`http://localhost:5000/service/${editId}`, form, {
+           await axios.put(`https://portfolio-backend-ijsg.onrender.com/service/${editId}`, form, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("Service updated successfully!");
     } else {
     
-      await axios.post("http://localhost:5000/addservice", form, {
+      await axios.post("https://portfolio-backend-ijsg.onrender.com/addservice", form, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("Service added successfully!");
@@ -164,7 +164,7 @@ const handleEdit = (service) => {
 const handleDelete = async(id) => {
 if(!window.confirm("Are you sure you want to delete this service?")) return;
   try {
-    const res = await fetch(`http://localhost:5000/service/${id}`,{
+    const res = await fetch(`https://portfolio-backend-ijsg.onrender.com/service/${id}`,{
       method : "DELETE",
     });
     const data = await res.json();

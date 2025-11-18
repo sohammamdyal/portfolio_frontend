@@ -7,9 +7,8 @@ const Hero = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/hero");
+        const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/hero");
   
-        // If backend returns array, pick last item
         const latest = Array.isArray(res.data)
           ? res.data[res.data.length - 1]
           : res.data;
@@ -22,7 +21,7 @@ const Hero = () => {
   
     fetchData();
   }, []);
-  // ⛔ Prevents: cannot read property 'name' of null
+
   if (!data) return <p>Loading...</p>;
 
   return (
@@ -30,7 +29,7 @@ const Hero = () => {
 
       <img
         className="d-block mx-auto mb-4 shadow border"
-        src={`http://localhost:5000/uploads/${data.imageUrl}`}
+        src={`https://portfolio-backend-ijsg.onrender.com/uploads/${data.imageUrl}`}
         alt={data.name || "Ankit Jha"}
         width={120}
         style={{ borderRadius: "50%" }}

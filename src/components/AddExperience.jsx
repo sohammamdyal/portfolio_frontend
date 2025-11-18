@@ -14,7 +14,7 @@ const AddExperience = () => {
   const [editId, setEditId] = useState(null);
 
   const fetchExperiences = async () => {
-    const res = await axios.get("http://localhost:5000/experience");
+    const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/experience");
     setExperiences(res.data);
   };
 
@@ -45,10 +45,10 @@ const AddExperience = () => {
 
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/experience/${editId}`, data);
+        await axios.put(`https://portfolio-backend-ijsg.onrender.com/experience/${editId}`, data);
         alert("Experience updated!");
       } else {
-        await axios.post("http://localhost:5000/experience", data);
+        await axios.post("https://portfolio-backend-ijsg.onrender.com/experience", data);
         alert("Experience added!");
       }
 
@@ -77,7 +77,7 @@ const AddExperience = () => {
 
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this record?")) return;
-    await axios.delete(`http://localhost:5000/experience/${id}`);
+    await axios.delete(`https://portfolio-backend-ijsg.onrender.com/experience/${id}`);
     fetchExperiences();
   };
 

@@ -14,7 +14,7 @@ const AdminProjects = () => {
   const fetchProjects = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get("http://localhost:5000/api/projects", {
+      const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/api/projects", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(res.data);
@@ -31,7 +31,7 @@ const AdminProjects = () => {
 
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${id}`, {
+      await axios.delete(`https://portfolio-backend-ijsg.onrender.com/api/projects/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(projects.filter((project) => project._id !== id));

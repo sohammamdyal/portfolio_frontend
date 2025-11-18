@@ -6,7 +6,7 @@ export default function EducationTimeline() {
   const [education, setEducation] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/education")
+    axios.get("https://portfolio-backend-ijsg.onrender.com/education")
       .then(res => setEducation(res.data))
       .catch(err => console.log(err));
   }, []);

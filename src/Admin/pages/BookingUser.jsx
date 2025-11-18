@@ -5,24 +5,24 @@ import axios from "axios";
 const BookingUser = () => {
   const [bookings, setBookings] = useState([]);
 
-  // ✅ Fetch all bookings from backend
+
   const fetchBookings = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/bookings");
+      const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/bookings");
       setBookings(res.data);
     } catch (error) {
       console.error("Error fetching bookings:", error);
     }
   };
 
-  // ✅ Fetch associated service details
+
   const fetchServiceData = async (bookings) => {
     const updatedBookings = await Promise.all(
       bookings.map(async (booking) => {
         if (booking.serviceId) {
           try {
             const res = await axios.get(
-              `http://localhost:5000/getservice/${booking.serviceId}`
+              `https://portfolio-backend-ijsg.onrender.com/getservice/${booking.serviceId}`
             );
             return { ...booking, serviceData: res.data };
           } catch (error) {
@@ -39,7 +39,7 @@ const BookingUser = () => {
 
   useEffect(() => {
     const loadBookings = async () => {
-      const res = await axios.get("http://localhost:5000/bookings");
+      const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/bookings");
       setBookings(res.data);
       fetchServiceData(res.data);
     };
@@ -49,7 +49,7 @@ const BookingUser = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this booking?")) {
       try {
-        await axios.delete(`http://localhost:5000/bookings/${id}`);
+        await axios.delete(`https://portfolio-backend-ijsg.onrender.com/bookings/${id}`);
         setBookings((prev) => prev.filter((b) => b._id !== id));
       } catch (error) {
         console.error("Error deleting booking:", error);

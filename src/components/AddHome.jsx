@@ -18,7 +18,7 @@ const AddHome = () => {
 
   const fetchHeroes = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/hero");
+      const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/hero");
       
 
       if (Array.isArray(res.data)) {
@@ -62,7 +62,7 @@ const AddHome = () => {
     if (file) formData.append("image", file);
 
     try {
-      const res = await axios.post("http://localhost:5000/hero", formData, {
+      const res = await axios.post("https://portfolio-backend-ijsg.onrender.com/hero", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -90,7 +90,7 @@ const AddHome = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:5000/hero/${heroId}`,
+        `https://portfolio-backend-ijsg.onrender.com/hero/${heroId}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -114,7 +114,7 @@ const AddHome = () => {
     if (!window.confirm("Are you sure you want to delete this record?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/hero/${id}`);
+      await axios.delete(`https://portfolio-backend-ijsg.onrender.com/hero/${id}`);
 
       alert("Hero deleted successfully!");
 

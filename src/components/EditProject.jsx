@@ -20,7 +20,7 @@ const EditProject = () => {
     const fetchProject = async () => {
       const token = localStorage.getItem("token");
       try {
-        const res = await axios.get(`http://localhost:5000/api/projects/${id}`, {
+        const res = await axios.get(`https://portfolio-backend-ijsg.onrender.com/api/projects/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         const project = res.data;

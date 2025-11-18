@@ -7,7 +7,7 @@ const Experience = () => {
   useEffect(() => {
     const fetchExp = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/experience");
+        const res = await axios.get("https://portfolio-backend-ijsg.onrender.com/experience");
         setExperience(res.data);
       } catch (err) {
         console.log("Error fetching experience:", err);
@@ -27,7 +27,7 @@ const Experience = () => {
   
           {exp.image && (
             <img
-              src={`http://localhost:5000/uploads/${exp.image}`}
+              src={`https://portfolio-backend-ijsg.onrender.com/uploads/${exp.image}`}
               alt={exp.role}
               className="me-3"
               style={{ width: "80px", height: "80px", objectFit: "cover", borderRadius: "50%" }}
